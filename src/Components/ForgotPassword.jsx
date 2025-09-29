@@ -2,16 +2,11 @@ import React, { useState } from "react";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!isValidEmail(email)) {
-      setMessage("Please enter a valid email address.");
-      return;
-    }
-    setMessage("If this email exists, a reset link has been sent.");
+    console.log("Forgot Password email:", email);
+    alert("Reset link sent (demo)");
   };
 
   return (
@@ -36,9 +31,6 @@ const ForgotPassword = () => {
             >
               SEND
             </button>
-            {message && (
-              <div className="text-sm mt-2 text-purple-700">{message}</div>
-            )}
           </div>
         </form>
       </div>
@@ -47,3 +39,5 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+
+

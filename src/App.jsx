@@ -1,64 +1,35 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
-import Home from "./pages/Home";
-import UserList from "./pages/UserList";
-import AddNewUser from "./pages/AddNewUser";
-import RolesPermissions from "./pages/RolesPermissions";
 import SigninForm from "./Components/SigninForm";
 import SignupForm from "./Components/SignupForm";
+import RolesPermissions from "./pages/RolesPermissions";
+import UserList from "./pages/UserList";
+import AddNewUser from "./pages/AddNewUser";
 import ForgotPassword from "./Components/ForgotPassword";
 
-function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Check if user is logged in on mount
-  useEffect(() => {
-    const loggedIn = localStorage.getItem("isAuthenticated") === "true";
-    setIsAuthenticated(loggedIn);
-  }, []);
-
-  // Handler to set authentication after login/signup
-  const handleAuth = () => {
-    setIsAuthenticated(true);
-    localStorage.setItem("isAuthenticated", "true");
-  };
-
-  // Handler to logout
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem("isAuthenticated");
-  };
-
-  if (!isAuthenticated) {
-    // Only show SignupForm if not authenticated
-    return <SignupForm onSignup={handleAuth} />;
-  }
-
+const App = () => {
   return (
     <Router>
-      <div className="flex">
-        <Sidebar onLogout={handleLogout} />
-        <div className="flex-1 flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-1 bg-gray-50 p-4">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/users" element={<UserList />} />
-              <Route path="/add-user" element={<AddNewUser />} />
-              <Route path="/roles" element={<RolesPermissions />} />
-              <Route path="/signin" element={<SigninForm onLogin={handleAuth} />} />
-              <Route path="/signup" element={<SignupForm onSignup={handleAuth} />} />
-              <Route path="/forgot" element={<ForgotPassword />} />
-              {/* Add more routes as needed */}
-            </Routes>
-          </main>
-        </div>
+      <Sidebar />
+      <div className="md:ml-64 min-h-dvh bg-gray-50">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SigninForm />} />
+            <Route path="/signup" element={<SignupForm />} />
+            <Route path="/forgot" element={<ForgotPassword />} />
+            <Route path="/roles" element={<RolesPermissions />} />
+            <Route path="/users" element={<UserList />} />
+            <Route path="/users/new" element={<AddNewUser />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
-}
+};
 
 export default App;

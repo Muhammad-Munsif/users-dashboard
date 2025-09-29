@@ -5,49 +5,15 @@ const SigninForm = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
-
-  // Helper: Validate email format
-  const isValidEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(""); // Clear error on input change
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Basic validation
-    if (!formData.email || !formData.password) {
-      setError("Please fill in all fields.");
-      return;
-    }
-    if (!isValidEmail(formData.email)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-    if (formData.password.length < 6) {
-      setError("Password must be at least 6 characters.");
-      return;
-    }
-
-    // Get users from localStorage
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-    const user = users.find(
-      (u) =>
-        u.email === formData.email &&
-        u.password === formData.password
-    );
-
-    if (user) {
-      alert("Sign In Successful!");
-      // Optionally, set user session here
-      // window.location.href = "/"; // Redirect after login
-    } else {
-      setError("Invalid email or password.");
-    }
+    console.log("Sign In Data:", formData);
+    alert("Sign In Successful!");
   };
 
   return (
@@ -66,7 +32,6 @@ const SigninForm = () => {
               placeholder="Enter your email"
               required
               className="w-full h-11 rounded-md border border-gray-200 px-4 text-sm outline-none focus:ring-2 focus:ring-purple-300"
-              aria-label="Email"
             />
             <input
               type="password"
@@ -76,12 +41,7 @@ const SigninForm = () => {
               placeholder="Password"
               required
               className="w-full h-11 rounded-md border border-gray-200 px-4 text-sm outline-none focus:ring-2 focus:ring-purple-300"
-              aria-label="Password"
-              minLength={6}
             />
-            {error && (
-              <div className="text-red-500 text-sm">{error}</div>
-            )}
             <button
               type="submit"
               className="h-10 w-full rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors"
@@ -105,3 +65,4 @@ const SigninForm = () => {
 };
 
 export default SigninForm;
+
