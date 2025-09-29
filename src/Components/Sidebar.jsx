@@ -43,6 +43,15 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
+              to="/users"
+              className="block p-2 rounded hover:bg-indigo-50 transition"
+              onClick={() => setOpen(false)}
+            >
+              Users
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/signin"
               className="block p-2 rounded hover:bg-indigo-50 transition"
               onClick={() => setOpen(false)}
