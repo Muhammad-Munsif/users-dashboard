@@ -1,4 +1,5 @@
 import React from 'react'
+import { FiSearch, FiBell } from 'react-icons/fi'
 
 const Navbar = () => {
   return (
@@ -9,9 +10,13 @@ const Navbar = () => {
           <h1 className="text-lg font-semibold">Dashboard</h1>
         </div>
         <div className="flex items-center gap-3 md:gap-4">
-          <input className="hidden md:block h-9 w-64 rounded-lg bg-gray-100 px-3 text-sm outline-none" placeholder="Search" />
-          <button className="size-9 rounded-lg bg-gray-100" />
-          <button className="size-9 rounded-lg bg-gray-100" />
+          <div className="hidden md:flex items-center h-9 w-64 rounded-lg bg-gray-100 px-3 text-sm">
+            <FiSearch className="text-gray-500 mr-2" />
+            <input className="bg-transparent outline-none flex-1" placeholder="Search" />
+          </div>
+          <button className="size-9 rounded-lg bg-gray-100 grid place-items-center">
+            <FiBell className="text-gray-600" />
+          </button>
           <div className="size-9 rounded-full bg-indigo-200" />
         </div>
       </div>

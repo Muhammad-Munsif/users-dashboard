@@ -1,4 +1,17 @@
 import React from 'react'
+import { Line, Doughnut } from 'react-chartjs-2'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Tooltip, Legend)
 
 const Home = () => {
   return (
@@ -9,7 +22,32 @@ const Home = () => {
             <h2 className="text-lg font-semibold">Sales Overview</h2>
             <span className="text-sm text-gray-500">This Month</span>
           </div>
-          <div className="h-56 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg" />
+          <div className="h-56">
+            <Line
+              data={{
+                labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+                datasets: [
+                  {
+                    label: 'Sales',
+                    data: [12,19,14,25,22,30,28],
+                    borderColor: '#6366F1',
+                    backgroundColor: 'rgba(99,102,241,0.15)',
+                    tension: 0.4,
+                    fill: true,
+                  },
+                ],
+              }}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                  x: { grid: { display: false } },
+                  y: { grid: { color: '#f3f4f6' }, ticks: { stepSize: 10 } },
+                },
+              }}
+            />
+          </div>
         </div>
         <div className="space-y-4">
           <div className="bg-white rounded-xl shadow-sm p-4">
@@ -61,7 +99,26 @@ const Home = () => {
         </div>
         <div className="bg-white rounded-xl shadow-sm p-4">
           <h3 className="font-medium mb-4">Sales Traffic</h3>
-          <div className="h-48 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg" />
+          <div className="h-48">
+            <Doughnut
+              data={{
+                labels: ['Direct','Referral','Social'],
+                datasets: [
+                  {
+                    data: [55,25,20],
+                    backgroundColor: ['#8B5CF6','#F97316','#A78BFA'],
+                    borderWidth: 0,
+                  },
+                ],
+              }}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                cutout: '68%',
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
