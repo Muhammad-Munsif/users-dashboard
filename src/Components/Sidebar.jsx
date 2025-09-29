@@ -25,6 +25,12 @@ const Sidebar = () => {
 
   return (
     <>
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/30 md:hidden z-30"
+          onClick={() => setOpen(false)}
+        />
+      )}
       {/* Toggle Button (Mobile Only) */}
       <button
         className="md:hidden p-3 fixed top-4 left-4 bg-indigo-600 text-white rounded-lg z-50"

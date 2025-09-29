@@ -46,7 +46,7 @@ const AddNewUser = () => {
           <input name="email" value={form.email} onChange={handleChange} placeholder="Email Address" type="email" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />
           <input name="mobile" value={form.mobile} onChange={handleChange} placeholder="Mobile No" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />
           <input name="password" value={form.password} onChange={handleChange} placeholder="Password" type="password" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />
-          <input name="email2" value={form.email2} onChange={handleChange} placeholder="Email" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />
+          <input name="email2" value={form.email2 || ''} onChange={handleChange} placeholder="Email" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />
           <select name="role" value={form.role} onChange={handleChange} className="h-11 rounded-md border border-gray-200 px-3 text-sm outline-none">
             <option>Admin</option>
             <option>Super Admin</option>

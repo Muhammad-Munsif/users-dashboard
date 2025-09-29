@@ -26,10 +26,10 @@ const RolesPermissions = () => {
       <h1 className="text-lg font-semibold mb-4">Dashboard</h1>
 
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm">
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between p-4 border-b border-gray-100">
           <h2 className="font-medium">Role & Permissions</h2>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center h-9 w-80 rounded-md border border-gray-200 overflow-hidden">
+          <div className="flex items-center gap-2 w-full md:w-auto">
+            <div className="flex items-center h-9 flex-1 md:w-80 rounded-md border border-gray-200 overflow-hidden">
               <span className="px-3 text-gray-400">🔍</span>
               <input className="h-full flex-1 px-2 text-sm outline-none" placeholder="Search content here..." />
             </div>
