@@ -7,9 +7,11 @@ const Navbar = () => {
     <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-gray-100">
       <div className="h-16 px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="size-8 rounded-lg bg-indigo-600" />
-          <GiHamburgerMenu className="text-gray-600 p-3" />
-          <h1 className="text-lg font-semibold ml-2">Dashboard</h1>
+          <div className="" />
+          <button>
+          <GiHamburgerMenu className="size-8 rounded-lg text-gray-600 w-10 h-10" />
+          </button>
+          <h1 className="text-lg font-semibold">Dashboard</h1>
         </div>
         <div className="flex items-center gap-3 md:gap-4">
           <div className="hidden md:flex items-center h-9 w-64 rounded-lg bg-gray-100 px-3 text-sm">
