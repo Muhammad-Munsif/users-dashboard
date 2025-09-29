@@ -22,6 +22,7 @@ const Sidebar = () => {
         <h2 className="text-2xl font-bold mb-6 text-indigo-600">Magicians</h2>
 
         <ul className="space-y-4">
+          <li className="text-xs uppercase tracking-wide text-gray-400">Module Setting</li>
           <li>
             <Link
               to="/"
@@ -29,6 +30,15 @@ const Sidebar = () => {
               onClick={() => setOpen(false)}
             >
               Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/roles"
+              className="block p-2 rounded hover:bg-indigo-50 transition"
+              onClick={() => setOpen(false)}
+            >
+              Role & Permissions
             </Link>
           </li>
           <li>

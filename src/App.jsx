@@ -5,6 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
 import SigninForm from "./Components/SigninForm";
 import SignupForm from "./Components/SignupForm";
+import RolesPermissions from "./pages/RolesPermissions";
 import ForgotPassword from "./Components/ForgotPassword";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/signin" element={<SigninForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/forgot" element={<ForgotPassword />} />
+            <Route path="/roles" element={<RolesPermissions />} />
           </Routes>
         </main>
       </div>
