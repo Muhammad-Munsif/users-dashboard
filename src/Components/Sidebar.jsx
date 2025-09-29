@@ -69,7 +69,7 @@ const Sidebar = () => {
                   <Link to="/users" className="block p-2 rounded hover:bg-indigo-50" onClick={() => setOpen(false)}>Users List</Link>
                 </li>
                 <li>
-                  <button className="w-full text-left p-2 rounded hover:bg-indigo-50">Add New User</button>
+                  <Link to="/users/new" className="block p-2 rounded hover:bg-indigo-50" onClick={() => setOpen(false)}>Add New User</Link>
                 </li>
               </ul>
             )}

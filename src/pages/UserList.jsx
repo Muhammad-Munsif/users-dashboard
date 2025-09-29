@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const users = Array.from({ length: 7 }).map((_, i) => ({
-  id: 1,
+const seed = Array.from({ length: 7 }).map((_, i) => ({
+  id: i + 1,
   user: 'Hayden',
   username: 'Hayden',
   email: `work${i}@gmail.com`,
@@ -14,6 +14,15 @@ const Pill = ({ children, color = 'bg-emerald-500' }) => (
 )
 
 const UserList = () => {
+  const [users, setUsers] = useState(seed)
+
+  useEffect(() => {
+    const local = JSON.parse(localStorage.getItem('users') || '[]')
+    if (local.length) {
+      setUsers(local)
+    }
+  }, [])
+
   return (
     <div className="p-4 md:p-6">
       <div className="mb-3 text-sm text-gray-400">Home / Analytic</div>

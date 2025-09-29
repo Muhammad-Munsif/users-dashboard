@@ -7,6 +7,7 @@ import SigninForm from "./Components/SigninForm";
 import SignupForm from "./Components/SignupForm";
 import RolesPermissions from "./pages/RolesPermissions";
 import UserList from "./pages/UserList";
+import AddNewUser from "./pages/AddNewUser";
 import ForgotPassword from "./Components/ForgotPassword";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/forgot" element={<ForgotPassword />} />
             <Route path="/roles" element={<RolesPermissions />} />
             <Route path="/users" element={<UserList />} />
+            <Route path="/users/new" element={<AddNewUser />} />
           </Routes>
         </main>
       </div>
