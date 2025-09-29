@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SignupForm = () => {
+const SignupForm = ({ onSignup }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,9 +53,16 @@ const SignupForm = () => {
     };
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
-    setSuccess("Signup Successful! You can now log in.");
+    setSuccess("Signup Successful! Redirecting...");
     setFormData({ name: "", email: "", password: "" });
     setKeepUpdated(false);
+
+    // Call onSignup to authenticate and show dashboard
+    if (onSignup) {
+      setTimeout(() => {
+        onSignup();
+      }, 1000); // Short delay for UX
+    }
   };
 
   return (
