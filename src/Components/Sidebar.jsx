@@ -86,7 +86,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     to="/signin"
-                    className="block p-2 rounded hover:bg-indigo-50"
+                    className="block p-2 rounded hover:bg-gray-100"
                     onClick={() => {
                       setOpen(false);
                       setShowSignin(true);
@@ -101,7 +101,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     to="/signup"
-                    className="block p-2 rounded hover:bg-indigo-50"
+                    className="block p-2 rounded hover:bg-gray-100"
                     onClick={() => {
                       setOpen(false);
                       setShowSignin(false);
@@ -116,7 +116,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     to="/forgot"
-                    className="block p-2 rounded hover:bg-indigo-50"
+                    className="block p-2 rounded hover:bg-gray-100"
                     onClick={() => {
                       setOpen(false);
                       setShowSignin(false);
@@ -131,7 +131,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     to="/404"
-                    className="block p-2 rounded hover:bg-indigo-50"
+                    className="block p-2 rounded hover:bg-gray-100"
                     onClick={() => {
                       setOpen(false);
                       setShowSignin(false);

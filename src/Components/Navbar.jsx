@@ -81,20 +81,20 @@ const Navbar = () => {
           </div>
 
           {/* 3. Right Icons and Avatar Group */}
-          <div className="flex items-center space-x-4 ml-auto">
+          <div className="relative flex items-center space-x-4 ml-auto">
             
             {/* Bell Icon with Red Badge */}
             <NotificationIcon 
               IconComponent={Bell} // Using Bell
               count={2} 
-              color="bg-red-500" 
+              color="bg-red-500 absolute top-2 right-3" 
             />
 
             {/* Message Icon with Red Badge */}
             <NotificationIcon 
               IconComponent={MessageCircle} // Using MessageCircle
               count={2} 
-              color="bg-red-500" 
+              color="bg-red-500 absolute top-2 right-3" 
             />
 
             {/* Profile Avatar with Dropdown Menu */}
