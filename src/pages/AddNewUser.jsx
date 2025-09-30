@@ -37,8 +37,8 @@ const AddNewUser = () => {
 
   return (
     <div className="p-4 md:p-6">
-      <h2 className="text-lg font-semibold mb-4">Add New User</h2>
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+      <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-100 shadow-sm p-10">
+      <h2 className="text-lg text-gray-800 font-semibold mb-4">Add New User</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />
           <input name="firstName" value={form.firstName} onChange={handleChange} placeholder="First Name" className="h-11 rounded-md border border-gray-200 px-4 text-sm outline-none" />

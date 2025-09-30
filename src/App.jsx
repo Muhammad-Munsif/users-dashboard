@@ -9,6 +9,8 @@ import RolesPermissions from "./pages/RolesPermissions";
 import UserList from "./pages/UserList";
 import AddNewUser from "./pages/AddNewUser";
 import ForgotPassword from "./Components/ForgotPassword";
+import AdminList from "./pages/AdminList";
+import AddNewAdmin from "./pages/AddNewAdmin";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
             <Route path="/roles" element={<RolesPermissions />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/users/new" element={<AddNewUser />} />
+            <Route path="/admins" element={<AdminList />} />
+            <Route path="/admins/new" element={<AddNewAdmin />} />
           </Routes>
         </main>
       </div>
