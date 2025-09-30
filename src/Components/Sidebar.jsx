@@ -25,6 +25,11 @@ const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const [usersOpen, setUsersOpen] = useState(true);
   const [adminsOpen, setAdminsOpen] = useState(false);
+  const [pagesOpen, setPagesOpen] = useState(false);
+  const [showSignin, setShowSignin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+  const [showForgot, setShowForgot] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   return (
     <>
@@ -61,7 +66,86 @@ const Sidebar = () => {
           />
           <Section title="User Management" icon={<FiUsers />} />
           <Section title="Application" icon={<FiSettings />} />
-          <Section title="Pages" icon={<FiFileText />} />
+
+          {/* Pages Section with sub-items */}
+          <li>
+            <button
+              className="w-full flex items-center justify-between p-2 rounded hover:bg-indigo-50 text-left"
+              onClick={() => setPagesOpen(!pagesOpen)}
+            >
+              <span className="inline-flex items-center gap-3">
+                <FiFileText className="text-indigo-500" />
+                <span>Pages</span>
+              </span>
+              <FiChevronRight
+                className={`transition-transform ${pagesOpen ? "rotate-90" : ""}`}
+              />
+            </button>
+            {pagesOpen && (
+              <ul className="pl-9 py-1 space-y-1">
+                <li>
+                  <Link
+                    to="/signin"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => {
+                      setOpen(false);
+                      setShowSignin(true);
+                      setShowSignup(false);
+                      setShowForgot(false);
+                      setShowError(false);
+                    }}
+                  >
+                    Sign In Form
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => {
+                      setOpen(false);
+                      setShowSignin(false);
+                      setShowSignup(true);
+                      setShowForgot(false);
+                      setShowError(false);
+                    }}
+                  >
+                    Sign Up Form
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/forgot"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => {
+                      setOpen(false);
+                      setShowSignin(false);
+                      setShowSignup(false);
+                      setShowForgot(true);
+                      setShowError(false);
+                    }}
+                  >
+                    Forgot Password
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/404"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => {
+                      setOpen(false);
+                      setShowSignin(false);
+                      setShowSignup(false);
+                      setShowForgot(false);
+                      setShowError(true);
+                    }}
+                  >
+                    Error 404
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
 
           {/* Admins Section */}
           <li>
@@ -74,9 +158,7 @@ const Sidebar = () => {
                 <span>Admins</span>
               </span>
               <FiChevronRight
-                className={`transition-transform ${
-                  adminsOpen ? "rotate-90" : ""
-                }`}
+                className={`transition-transform ${adminsOpen ? "rotate-90" : ""}`}
               />
             </button>
             {adminsOpen && (
@@ -128,9 +210,7 @@ const Sidebar = () => {
                 <span>Users</span>
               </span>
               <FiChevronRight
-                className={`transition-transform ${
-                  usersOpen ? "rotate-90" : ""
-                }`}
+                className={`transition-transform ${usersOpen ? "rotate-90" : ""}`}
               />
             </button>
             {usersOpen && (

@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
-import SigninForm from "./Components/SigninForm";
-import SignupForm from "./Components/SignupForm";
-import RolesPermissions from "./pages/RolesPermissions";
+import Home from "./pages/Home";
 import UserList from "./pages/UserList";
 import AddNewUser from "./pages/AddNewUser";
-import ForgotPassword from "./Components/ForgotPassword";
 import AdminList from "./pages/AdminList";
 import AddNewAdmin from "./pages/AddNewAdmin";
+import SigninForm from "./Components/SigninForm";
+import SignupForm from "./Components/SignupForm";
+import ForgotPassword from "./Components/ForgotPassword";
+import RolesPermissions from "./pages/RolesPermissions";
+import Error404 from "./Components/Error404";
 
 const App = () => {
   return (
@@ -21,14 +22,20 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* User routes */}
+            <Route path="/users" element={<UserList />} />
+            <Route path="/users/new" element={<AddNewUser />} />
+            {/* Admin routes */}
+            <Route path="/admins" element={<AdminList />} />
+            <Route path="/admins/new" element={<AddNewAdmin />} />
+            {/* Auth routes */}
             <Route path="/signin" element={<SigninForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/forgot" element={<ForgotPassword />} />
+            {/* Other */}
             <Route path="/roles" element={<RolesPermissions />} />
-            <Route path="/users" element={<UserList />} />
-            <Route path="/users/new" element={<AddNewUser />} />
-            <Route path="/admins" element={<AdminList />} />
-            <Route path="/admins/new" element={<AddNewAdmin />} />
+            {/* 404 */}
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </main>
       </div>

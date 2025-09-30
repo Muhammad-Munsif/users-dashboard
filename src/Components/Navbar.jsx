@@ -44,7 +44,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <header className="w-full shadow-md bg-white border-b border-gray-100 sticky top-0 z-10">
+      <header className="w-full shadow-md bg-white border-b border-gray-100 sticky top-0 z-10 px-2 py-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 space-x-4">
           
@@ -54,7 +54,7 @@ const Navbar = () => {
             aria-label="Toggle Menu"
           >
             {/* Using Menu from lucide-react */}
-            <Menu className="w-6 h-6" />
+            <Menu className="w-10 h-10" />
           </button>
 
           {/* 2. Search Bar Group */}
@@ -65,7 +65,7 @@ const Navbar = () => {
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-5 py-3 text-base text-gray-700 placeholder-gray-400 bg-white border border-r-0 border-gray-200 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
+              className="w-full px-5 py-3 text-base text-gray-700 placeholder-gray-400 outline-none bg-white border border-r-0 border-gray-200 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
               style={{ paddingRight: '0' }}
             />
             {/* Search Button (Orange) */}
@@ -145,29 +145,6 @@ const Navbar = () => {
                 )}
             </div>
           </div>
-        </div>
-      </div>
-    </header>
-
-    // header2 designed for the navber
-    <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-gray-100">
-      <div className="h-16 px-4 md:px-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="" />
-          <button>
-          <RxHamburgerMenu className="size-8 rounded-lg text-gray-600 w-10 h-10" />
-          </button>
-          <h1 className="text-lg font-semibold">Dashboard</h1>
-        </div>
-        <div className="flex items-center gap-3 md:gap-4">
-          <div className="hidden md:flex items-center h-9 w-64 rounded-lg bg-gray-100 px-3 text-sm">
-            <FiSearch className="text-gray-500 mr-2" />
-            <input className="bg-transparent outline-none flex-1" placeholder="Search" />
-          </div>
-          <button className="size-9 rounded-lg bg-gray-100 grid place-items-center">
-            <FiBell className="text-gray-600 p-3" />
-          </button>
-          <div className="size-9 rounded-full bg-indigo-200" />
         </div>
       </div>
     </header>
