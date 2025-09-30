@@ -17,11 +17,14 @@ import {
   FiTable,
   FiSquare,
   FiChevronRight,
+  FiUserCheck,
+  FiUserPlus,
 } from "react-icons/fi";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const [usersOpen, setUsersOpen] = useState(true);
+  const [adminsOpen, setAdminsOpen] = useState(false);
 
   return (
     <>
@@ -50,14 +53,71 @@ const Sidebar = () => {
         </div>
 
         <ul className="space-y-1 text-sm">
-          <SideItem to="/" icon={<FiHome />} label="Dashboard" onClick={() => setOpen(false)} />
+          <SideItem
+            to="/"
+            icon={<FiHome />}
+            label="Dashboard"
+            onClick={() => setOpen(false)}
+          />
           <Section title="User Management" icon={<FiUsers />} />
           <Section title="Application" icon={<FiSettings />} />
           <Section title="Pages" icon={<FiFileText />} />
-          <Section title="Admins" icon={<FiShield />} />
-          <SideItem to="/roles" icon={<FiShield />} label="Role & Permissions" onClick={() => setOpen(false)} />
+
+          {/* Admins Section */}
+          <li>
+            <button
+              className="w-full flex items-center justify-between p-2 rounded hover:bg-indigo-50 text-left"
+              onClick={() => setAdminsOpen(!adminsOpen)}
+            >
+              <span className="inline-flex items-center gap-3">
+                <FiShield className="text-indigo-500" />
+                <span>Admins</span>
+              </span>
+              <FiChevronRight
+                className={`transition-transform ${
+                  adminsOpen ? "rotate-90" : ""
+                }`}
+              />
+            </button>
+            {adminsOpen && (
+              <ul className="pl-9 py-1 space-y-1">
+                <li>
+                  <Link
+                    to="/admins"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <FiUserCheck />
+                      Admin List
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admins/new"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <FiUserPlus />
+                      Add New Admin
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
+          <SideItem
+            to="/roles"
+            icon={<FiShield />}
+            label="Role & Permissions"
+            onClick={() => setOpen(false)}
+          />
           <Section title="Navs" icon={<FiGrid />} />
 
+          {/* Users Section */}
           <li>
             <button
               className="w-full flex items-center justify-between p-2 rounded hover:bg-indigo-50 text-left"
@@ -67,15 +127,31 @@ const Sidebar = () => {
                 <FiUsers className="text-indigo-500" />
                 <span>Users</span>
               </span>
-              <FiChevronRight className={`transition-transform ${usersOpen ? 'rotate-90' : ''}`} />
+              <FiChevronRight
+                className={`transition-transform ${
+                  usersOpen ? "rotate-90" : ""
+                }`}
+              />
             </button>
             {usersOpen && (
               <ul className="pl-9 py-1 space-y-1">
                 <li>
-                  <Link to="/users" className="block p-2 rounded hover:bg-indigo-50" onClick={() => setOpen(false)}>Users List</Link>
+                  <Link
+                    to="/users"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    Users List
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/users/new" className="block p-2 rounded hover:bg-indigo-50" onClick={() => setOpen(false)}>Add New User</Link>
+                  <Link
+                    to="/users/new"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    Add New User
+                  </Link>
                 </li>
               </ul>
             )}
@@ -95,9 +171,24 @@ const Sidebar = () => {
           <Section title="Table" icon={<FiTable />} />
           <Section title="Cards" icon={<FiSquare />} />
 
-          <SideItem to="/signin" icon={<FiSquare />} label="Sign In" onClick={() => setOpen(false)} />
-          <SideItem to="/signup" icon={<FiSquare />} label="Sign Up" onClick={() => setOpen(false)} />
-          <SideItem to="/forgot" icon={<FiSquare />} label="Forgot Password" onClick={() => setOpen(false)} />
+          <SideItem
+            to="/signin"
+            icon={<FiSquare />}
+            label="Sign In"
+            onClick={() => setOpen(false)}
+          />
+          <SideItem
+            to="/signup"
+            icon={<FiSquare />}
+            label="Sign Up"
+            onClick={() => setOpen(false)}
+          />
+          <SideItem
+            to="/forgot"
+            icon={<FiSquare />}
+            label="Forgot Password"
+            onClick={() => setOpen(false)}
+          />
         </ul>
       </div>
     </>
@@ -106,7 +197,11 @@ const Sidebar = () => {
 
 const SideItem = ({ to, icon, label, onClick }) => (
   <li>
-    <Link to={to} className="flex items-center justify-between p-2 rounded hover:bg-indigo-50" onClick={onClick}>
+    <Link
+      to={to}
+      className="flex items-center justify-between p-2 rounded hover:bg-indigo-50"
+      onClick={onClick}
+    >
       <span className="inline-flex items-center gap-3">
         <span className="text-indigo-500">{icon}</span>
         <span>{label}</span>
@@ -114,7 +209,7 @@ const SideItem = ({ to, icon, label, onClick }) => (
       <FiChevronRight className="text-gray-300" />
     </Link>
   </li>
-)
+);
 
 const Section = ({ title, icon }) => (
   <li>
@@ -126,7 +221,6 @@ const Section = ({ title, icon }) => (
       <FiChevronRight className="text-gray-300" />
     </div>
   </li>
-)
+);
 
 export default Sidebar;
-

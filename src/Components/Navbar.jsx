@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiSearch, FiBell, } from 'react-icons/fi';
-import { GiHamburgerMenu } from "react-icons/gi";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
   return (
@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <div className="" />
           <button>
-          <GiHamburgerMenu className="size-8 rounded-lg text-gray-600 w-10 h-10" />
+          <RxHamburgerMenu className="size-8 rounded-lg text-gray-600 w-10 h-10" />
           </button>
           <h1 className="text-lg font-semibold">Dashboard</h1>
         </div>
