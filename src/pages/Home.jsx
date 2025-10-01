@@ -10,8 +10,10 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
-import ModuleSetting from '../Components/ModuleSetting'
-import Table from '../Components/Table'
+import Table from '../Components/Table';
+import StokeDetail from '../Components/StokeDetail';
+import RecentActivity from '../Components/RecentActivity';
+import MemberMail from '../Components/MemberMail';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Tooltip, Legend)
 
@@ -125,7 +127,28 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ModuleSetting/>
+      <div className="min-h-screen bg-gray-50 p-4 md:p-8 font-['Inter']">
+      <h1 className="sr-only">Dashboard Overview</h1>
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {/* Column 1: Stock Details */}
+        <div className="lg:col-span-1">
+          <StockDetail />
+        </div>
+
+        {/* Column 2: Recent Activity */}
+        <div className="lg:col-span-1">
+          <RecentActivity />
+        </div>
+
+        {/* Column 3: Member Request Form */}
+        <div className="lg:col-span-1">
+          <MemberMail />
+        </div>
+      </div>
+      <p className="mt-8 text-center text-sm text-gray-500">
+        Note: The layout is fully responsive. It stacks the cards vertically on mobile and displays them in three columns on larger screens.
+      </p>
+    </div>
     </div>
     </>
   )

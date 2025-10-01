@@ -22,8 +22,8 @@ const EditUserModal = ({ user, onClose, onSave }) => {
   return (
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl p-6 w-full max-w-md shadow-lg">
-        <h2 className="text-lg font-semibold mb-4">Edit User</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <h2 className="text-lg font-semibold mb-4">Edit User Admin</h2>
+        <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
           <input
             type="text"
             name="user"
