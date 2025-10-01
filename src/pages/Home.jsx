@@ -139,28 +139,28 @@ const Home = () => {
           </div>
         </div>
         {/* <div className="min-h-screen bg-gray-50 p-4 md:p-8 font-['Inter']"> */}
-          {/* <h1 className="sr-only">Dashboard Overview</h1> */}
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {/* Column 1: Stock Details */}
-            <div className="lg:col-span-1">
-              <StokeDetail />
-            </div>
-
-            {/* Column 2: Recent Activity */}
-            <div className="lg:col-span-1">
-              <RecentActivity />
-            </div>
-
-            {/* Column 3: Member Request Form */}
-            <div className="lg:col-span-1">
-              <MemberMail />
-            </div>
+        {/* <h1 className="sr-only">Dashboard Overview</h1> */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {/* Column 1: Stock Details */}
+          <div className="lg:col-span-1">
+            <StokeDetail />
           </div>
-          <StokeDetails />
-          <p className="mt-8 text-center md:text-wrap text-sm text-gray-500">
-            Note: The layout is fully responsive. It stacks the cards vertically
-            on mobile and displays them in three columns on larger screens.
-          </p>
+
+          {/* Column 2: Recent Activity */}
+          <div className="lg:col-span-1">
+            <RecentActivity />
+          </div>
+
+          {/* Column 3: Member Request Form */}
+          <div className="lg:col-span-1">
+            <MemberMail />
+          </div>
+        </div>
+        <StokeDetails />
+        <p className="mt-8 text-center md:text-wrap text-sm text-gray-500">
+          Note: The layout is fully responsive. It stacks the cards vertically
+          on mobile and displays them in three columns on larger screens.
+        </p>
         {/* </div> */}
       </div>
     </>

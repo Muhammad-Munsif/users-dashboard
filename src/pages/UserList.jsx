@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { FaRegEye, FaRegEdit, FaTrashAlt } from 'react-icons/fa'
+import React, { useEffect, useState } from "react";
+import { FaRegEye, FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
 // Pill component for status
-const Pill = ({ children, color = 'bg-emerald-500' }) => (
-  <span className={`inline-flex items-center h-6 px-3 rounded-full text-white text-xs ${color}`}>{children}</span>
-)
+const Pill = ({ children, color = "bg-emerald-500" }) => (
+  <span
+    className={`inline-flex items-center h-6 px-3 rounded-full text-white text-xs ${color}`}
+  >
+    {children}
+  </span>
+);
 
 // Edit User Modal
 const EditUserModal = ({ user, onClose, onSave }) => {
-  const [form, setForm] = useState({ ...user })
+  const [form, setForm] = useState({ ...user });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    onSave(form)
-  }
+    e.preventDefault();
+    onSave(form);
+  };
 
   return (
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
@@ -71,28 +75,49 @@ const EditUserModal = ({ user, onClose, onSave }) => {
             <option value="Pending">Pending</option>
           </select>
           <div className="flex justify-end gap-2">
-            <button type="button" onClick={onClose} className="px-4 py-2 rounded bg-gray-200">Cancel</button>
-            <button type="submit" className="px-4 py-2 rounded bg-purple-600 text-white">Save</button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 rounded bg-gray-200"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 rounded bg-purple-600 text-white"
+            >
+              Save
+            </button>
           </div>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 // Delete User Modal
 const DeleteUserModal = ({ user, onClose, onDelete }) => (
   <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
     <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-lg">
       <h2 className="text-lg font-semibold mb-4">Delete User</h2>
-      <p>Are you sure you want to delete <span className="font-bold">{user.user}</span>?</p>
+      <p>
+        Are you sure you want to delete{" "}
+        <span className="font-bold">{user.user}</span>?
+      </p>
       <div className="flex justify-end gap-2 mt-6">
-        <button onClick={onClose} className="px-4 py-2 rounded bg-gray-200">Cancel</button>
-        <button onClick={() => onDelete(user.id)} className="px-4 py-2 rounded bg-red-600 text-white">Delete</button>
+        <button onClick={onClose} className="px-4 py-2 rounded bg-gray-200">
+          Cancel
+        </button>
+        <button
+          onClick={() => onDelete(user.id)}
+          className="px-4 py-2 rounded bg-red-600 text-white"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>
-)
+);
 
 // View User Modal
 const ViewUserModal = ({ user, onClose }) => (
@@ -100,56 +125,73 @@ const ViewUserModal = ({ user, onClose }) => (
     <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-lg">
       <h2 className="text-lg font-semibold mb-4">User Details</h2>
       <div className="space-y-2">
-        <div><b>Name:</b> {user.user}</div>
-        <div><b>Username:</b> {user.username}</div>
-        <div><b>Email:</b> {user.email}</div>
-        <div><b>Role:</b> {user.role}</div>
-        <div><b>Status:</b> {user.status}</div>
+        <div>
+          <b>Name:</b> {user.user}
+        </div>
+        <div>
+          <b>Username:</b> {user.username}
+        </div>
+        <div>
+          <b>Email:</b> {user.email}
+        </div>
+        <div>
+          <b>Role:</b> {user.role}
+        </div>
+        <div>
+          <b>Status:</b> {user.status}
+        </div>
       </div>
       <div className="flex justify-end mt-6">
-        <button onClick={onClose} className="px-4 py-2 rounded bg-purple-600 text-white">Close</button>
+        <button
+          onClick={onClose}
+          className="px-4 py-2 rounded bg-purple-600 text-white"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>
-)
+);
 
 const seed = Array.from({ length: 7 }).map((_, i) => ({
   id: i + 1,
-  user: 'Hayden',
-  username: 'Hayden',
+  user: "Hayden",
+  username: "Hayden",
   email: `work${i}@gmail.com`,
-  role: 'Admin',
-  status: 'Active',
-}))
+  role: "Admin",
+  status: "Active",
+}));
 
 const UserList = () => {
-  const [users, setUsers] = useState(seed)
-  const [editUser, setEditUser] = useState(null)
-  const [deleteUser, setDeleteUser] = useState(null)
-  const [viewUser, setViewUser] = useState(null)
+  const [users, setUsers] = useState(seed);
+  const [editUser, setEditUser] = useState(null);
+  const [deleteUser, setDeleteUser] = useState(null);
+  const [viewUser, setViewUser] = useState(null);
 
   useEffect(() => {
-    const local = JSON.parse(localStorage.getItem('users') || '[]')
+    const local = JSON.parse(localStorage.getItem("users") || "[]");
     if (local.length) {
-      setUsers(local)
+      setUsers(local);
     }
-  }, [])
+  }, []);
 
   // Save edited user
   const handleSave = (updatedUser) => {
-    const updatedUsers = users.map(u => u.id === updatedUser.id ? updatedUser : u)
-    setUsers(updatedUsers)
-    localStorage.setItem('users', JSON.stringify(updatedUsers))
-    setEditUser(null)
-  }
+    const updatedUsers = users.map((u) =>
+      u.id === updatedUser.id ? updatedUser : u
+    );
+    setUsers(updatedUsers);
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    setEditUser(null);
+  };
 
   // Delete user
   const handleDelete = (id) => {
-    const updatedUsers = users.filter(u => u.id !== id)
-    setUsers(updatedUsers)
-    localStorage.setItem('users', JSON.stringify(updatedUsers))
-    setDeleteUser(null)
-  }
+    const updatedUsers = users.filter((u) => u.id !== id);
+    setUsers(updatedUsers);
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    setDeleteUser(null);
+  };
 
   return (
     <div className="p-4 md:p-6">
@@ -162,9 +204,14 @@ const UserList = () => {
           <div className="flex items-center gap-2 w-full md:w-auto">
             <div className="flex items-center h-9 flex-1 md:w-80 rounded-md border border-gray-200 overflow-hidden">
               <span className="px-3 text-gray-400">🔍</span>
-              <input className="h-full flex-1 px-2 text-sm outline-none" placeholder="Search content here..." />
+              <input
+                className="h-full flex-1 px-2 text-sm outline-none"
+                placeholder="Search content here..."
+              />
             </div>
-            <button className="h-9 px-4 rounded-md bg-purple-600 text-white text-sm">Search</button>
+            <button className="h-9 px-4 rounded-md bg-purple-600 text-white text-sm">
+              Search
+            </button>
           </div>
         </div>
 
@@ -176,7 +223,9 @@ const UserList = () => {
                   <th className="text-left font-medium py-2 px-3">Id</th>
                   <th className="text-left font-medium py-2 px-3">User</th>
                   <th className="text-left font-medium py-2 px-3">Username</th>
-                  <th className="text-left font-medium py-2 px-3">Email Address</th>
+                  <th className="text-left font-medium py-2 px-3">
+                    Email Address
+                  </th>
                   <th className="text-left font-medium py-2 px-3">Role</th>
                   <th className="text-left font-medium py-2 px-3">Status</th>
                   <th className="text-left font-medium py-2 px-3">Action</th>
@@ -190,7 +239,9 @@ const UserList = () => {
                     <td className="py-3 px-3 text-gray-600">{u.username}</td>
                     <td className="py-3 px-3 text-gray-600">{u.email}</td>
                     <td className="py-3 px-3 text-purple-600">{u.role}</td>
-                    <td className="py-3 px-3"><Pill>{u.status}</Pill></td>
+                    <td className="py-3 px-3">
+                      <Pill>{u.status}</Pill>
+                    </td>
                     <td className="py-3 px-3">
                       <div className="flex items-center gap-4 text-purple-600">
                         <button title="view" onClick={() => setViewUser(u)}>
@@ -211,11 +262,19 @@ const UserList = () => {
           </div>
 
           <div className="flex items-center justify-between mt-4 text-xs text-gray-500">
-            <div>Showing 1 to {users.length} of {users.length} entries</div>
+            <div>
+              Showing 1 to {users.length} of {users.length} entries
+            </div>
             <div className="flex items-center gap-2">
-              <button className="size-7 grid place-items-center rounded-md bg-gray-100">←</button>
-              <button className="size-7 grid place-items-center rounded-md bg-purple-600 text-white">1</button>
-              <button className="size-7 grid place-items-center rounded-md bg-gray-100">→</button>
+              <button className="size-7 grid place-items-center rounded-md bg-gray-100">
+                ←
+              </button>
+              <button className="size-7 grid place-items-center rounded-md bg-purple-600 text-white">
+                1
+              </button>
+              <button className="size-7 grid place-items-center rounded-md bg-gray-100">
+                →
+              </button>
             </div>
           </div>
         </div>
@@ -237,13 +296,10 @@ const UserList = () => {
         />
       )}
       {viewUser && (
-        <ViewUserModal
-          user={viewUser}
-          onClose={() => setViewUser(null)}
-        />
+        <ViewUserModal user={viewUser} onClose={() => setViewUser(null)} />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default UserList
+export default UserList;
