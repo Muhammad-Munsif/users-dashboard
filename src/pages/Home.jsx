@@ -132,7 +132,7 @@ const Home = () => {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Column 1: Stock Details */}
         <div className="lg:col-span-1">
-          <StockDetail />
+          <StokeDetail />
         </div>
 
         {/* Column 2: Recent Activity */}

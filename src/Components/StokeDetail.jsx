@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { MoreHorizontal, Plus } from "lucide-react";
+import CardHeader from "./CardHeader";
 
-const CardHeader = ({ title }) => (
-  <div className="flex justify-between items-center p-5 border-b border-gray-100">
-    <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
-    <button className="text-gray-400 hover:text-indigo-500 p-1 rounded-full transition duration-150">
-      <MoreHorizontal size={24} />
-    </button>
-  </div>
-);
 
 const ProductImage = ({ icon, color }) => (
   <div
@@ -18,13 +11,13 @@ const ProductImage = ({ icon, color }) => (
     <span className="text-white text-xs font-bold opacity-80">
       {icon.charAt(0)}
     </span>
-    <div className="absolute -bottom-0 -right-0.5 bg-pink-500 p-0.5 rounded-full border-2 border-white">
+    {/* <div className="absolute -bottom-0 -right-0.5 bg-pink-500 p-0.5 rounded-full border-2 border-white">
       <Plus size={10} className="text-white" />
-    </div>
+    </div> */}
   </div>
 );
 
-const StockDetails = () => {
+const StokeDetail = () => {
   const stockData = [
     {
       id: 1,
