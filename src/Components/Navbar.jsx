@@ -65,7 +65,7 @@ const Navbar = () => {
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-5 py-3 text-base text-gray-700 placeholder-gray-400 outline-none bg-white border border-r-0 border-gray-200 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
+              className="w-full px-5 py-3 text-base text-gray-700 placeholder-gray-400 outline-none bg-white border border-r-0 border-gray-200 rounded-l-xl focus:ring-2 focus:ring-indigo-500 transition duration-150"
               style={{ paddingRight: '0' }}
             />
             {/* Search Button (Orange) */}

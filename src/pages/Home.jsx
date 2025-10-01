@@ -11,11 +11,15 @@ import {
   Legend,
 } from 'chart.js'
 import ModuleSetting from '../Components/ModuleSetting'
+import Table from '../Components/Table'
+import Chart from 'react-apexcharts'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Tooltip, Legend)
 
 const Home = () => {
   return (
+    <>
+    <Table/>
     <div className="p-4 md:p-6 space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-white rounded-xl shadow-sm p-4">
@@ -120,10 +124,12 @@ const Home = () => {
               }}
             />
           </div>
+          <ChartJS/>
         </div>
       </div>
       <ModuleSetting/>
     </div>
+    </>
   )
 }
 
