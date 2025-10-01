@@ -52,10 +52,15 @@ const SigninForm = () => {
 
           <div className="mt-5 space-y-2 text-center text-sm text-gray-600">
             <p>
-              Need an account? <a href="/signup" className="text-purple-600 font-medium">Sign Up</a>
+              Need an account?{" "}
+              <a href="/signup" className="text-purple-600 font-medium">
+                Sign Up
+              </a>
             </p>
             <p>
-              <a href="/forgot" className="hover:underline">Forget Password?</a>
+              <a href="/forgot" className="hover:underline">
+                Forget Password?
+              </a>
             </p>
           </div>
         </form>
@@ -65,4 +70,3 @@ const SigninForm = () => {
 };
 
 export default SigninForm;
-

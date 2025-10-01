@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { MoreHorizontal, Plus } from "lucide-react";
 import CardHeader from "./CardHeader";
 
-
 const ProductImage = ({ icon, color }) => (
   <div
     className={`relative w-12 h-12 rounded-full ${color} flex items-center justify-center shadow-md`}
