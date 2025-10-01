@@ -41,14 +41,14 @@ const MemberMail = () => {
 
         {/* Form Section */}
         <form onSubmit={handleSubmit} className="w-full space-y-4">
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 ">
             <input
               type="text"
               name="firstName"
               placeholder="First Name"
               value={formData.firstName}
               onChange={handleChange}
-              className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+              className="flex-1 px-4 w-[50%] py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
               required
             />
             <input
@@ -57,7 +57,7 @@ const MemberMail = () => {
               placeholder="Last Name"
               value={formData.lastName}
               onChange={handleChange}
-              className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+              className="flex-1 px-4 w-[50%] py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
               required
             />
           </div>

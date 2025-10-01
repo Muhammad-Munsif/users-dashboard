@@ -1,50 +1,62 @@
-import React from "react";
-import { CheckCircle } from 'lucide-react';
-// import CardHeader from "./CardHeader"; // Assuming this component exists
+import React from 'react';
 
 const RecentActivity = () => {
+  // Mock data matching the structure shown in the image
   const activityData = [
-    // ... your activityData array
-    { time: "5 min ago", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque." },
-    { time: "10 min ago", content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { time: "30 min ago", content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco." },
-    { time: "1 hour ago", content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum." },
-    { time: "2 hours ago", content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia." },
+    { 
+      time: "5 min ago", 
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque" 
+    },
+    { 
+      time: "5 min ago", 
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque" 
+    },
+    { 
+      time: "15 min ago", 
+      content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" 
+    },
+    { 
+      time: "1 hour ago", 
+      content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." 
+    },
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-lg h-full overflow-hidden">
-      {/* Assuming CardHeader renders correctly, though it's not defined here */}
-      {/* <CardHeader title="Recent activity" /> */}
-      <div className="p-4 border-b">
-        <h2 className="text-lg font-semibold text-gray-800">Recent activity</h2>
+    <div className="max-w-md mx-auto bg-white p-5 rounded-xl shadow-lg h-full">
+      {/* Card Header */}
+      <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
+        <h2 className="text-xl font-bold text-gray-800">
+          Recent activity
+        </h2>
+        {/* Three-dot menu icon (using inline SVG for simplicity) */}
+        <button className="p-2 rounded-lg text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </button>
       </div>
 
-      {/* REMOVED: max-h-[400px] and overflow-y-auto */}
-      <div className="p-5"> 
-        <div className="relative pl-6 space-y-8">
-          
-          {/* Timeline Vertical Line (Optional, but often needed for a timeline) */}
-          <div className="absolute left-1 top-0 bottom-0 w-0.5 bg-gray-200" />
-          
-          {activityData.map((activity, index) => (
-            <div key={index} className="relative z-10">
-              
-              {/* Timeline Dot with a solid color on the inside */}
-              <div className="absolute -left-5 top-0 h-4 w-4 rounded-full bg-white dark:bg-white flex items-center justify-center border-2 border-indigo-500">
-                <CheckCircle size={10} className="text-indigo-500 fill-indigo-500" />
-              </div>
-              
-              <p className="text-xs font-medium text-indigo-600 mb-1">
+      {/* Activity Feed Container */}
+      <div className="space-y-6">
+        {activityData.map((activity, index) => (
+          <div key={index} className="flex items-start">
+            {/* Timeline Dot (Purple) */}
+            <div className="flex-shrink-0 mt-1 mr-3">
+              <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-grow">
+              {/* Time (Bold text as shown in the image) */}
+              <p className="text-base font-bold text-gray-800 leading-snug">
                 {activity.time}
               </p>
               
-              <p className="text-gray-600 text-sm leading-relaxed text-left">
+              {/* Activity Description (Lighter, multi-line text) */}
+              <p className="text-sm text-gray-500 leading-snug whitespace-pre-wrap">
                 {activity.content}
               </p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
