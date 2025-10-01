@@ -17,10 +17,18 @@ const StokeDetails = () => {
     { name: 'Jhon Smith', role: 'Customer' },
     { name: 'Jhon Smith', role: 'Customer' },
     { name: 'Jhon Smith', role: 'Customer' },
+    // Adding more users to ensure the scrollbar is visible
+    { name: 'Jane Doe', role: 'Customer' },
+    { name: 'Peter Pan', role: 'Admin' },
+    { name: 'Mary Jane', role: 'Customer' },
+    { name: 'Mike Ross', role: 'Customer' },
+    { name: 'Harvey Specter', role: 'Customer' },
+    { name: 'Rachel Zane', role: 'Customer' },
+    { name: 'Donna Paulsen', role: 'Admin' },
   ];
 
   const userCard = (user, index) => (
-    <div key={index} className="flex items-center justify-between p-2 my-2 bg-gray-100 rounded-full dark:bg-gray-800">
+    <div key={index} className="flex items-center justify-between p-2 my-2 bg-gray-100 rounded-full dark:bg-gray-800 ">
       <div className="flex items-center">
         <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 mr-2">
           {/* Placeholder for the user image */}
@@ -46,7 +54,7 @@ const StokeDetails = () => {
   );
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-lg dark:bg-gray-900 overflow-hidden">
+    <div className="p-4 bg-white rounded-lg dark:bg-gray-900 overflow-hidden border-4 border-rose-600">
       <div className="flex flex-col md:flex-row items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-0">Stoke Details</h2>
         <div className="relative w-full md:w-auto flex items-center">
@@ -62,7 +70,7 @@ const StokeDetails = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-[400px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-200">
         {users.map((user, index) => userCard(user, index))}
       </div>
     </div>
