@@ -8,7 +8,7 @@ const Error404 = () => {
       <h1 className="text-6xl font-bold text-purple-600">404</h1>
       <p className="text-lg text-gray-600 mb-2">Page Not Found</p>
       <button
-        onClick={() => navigate('/*')}
+        onClick={() => navigate('/')}
         className="px-6 py-2 rounded bg-purple-600 text-white hover:bg-purple-700 transition"
       >
         Back to Home

@@ -23,7 +23,7 @@ const SigninForm = () => {
           <h2 className="text-xl font-semibold tracking-wide">Log in</h2>
         </div>
         <form onSubmit={handleSubmit} className="p-6 md:p-8">
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col">
             <input
               type="email"
               name="email"
