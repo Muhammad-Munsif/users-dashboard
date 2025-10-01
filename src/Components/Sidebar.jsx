@@ -77,7 +77,9 @@ const Sidebar = () => {
                 <span>Pages</span>
               </span>
               <FiChevronRight
-                className={`transition-transform ${pagesOpen ? "rotate-90" : ""}`}
+                className={`transition-transform ${
+                  pagesOpen ? "rotate-90" : ""
+                }`}
               />
             </button>
             {pagesOpen && (
@@ -133,7 +135,9 @@ const Sidebar = () => {
                 <span>Admins</span>
               </span>
               <FiChevronRight
-                className={`transition-transform ${adminsOpen ? "rotate-90" : ""}`}
+                className={`transition-transform ${
+                  adminsOpen ? "rotate-90" : ""
+                }`}
               />
             </button>
             {adminsOpen && (
@@ -177,7 +181,9 @@ const Sidebar = () => {
                 <span>Role & Permission</span>
               </span>
               <FiChevronRight
-                className={`transition-transform ${rolesOpen ? "rotate-90" : ""}`}
+                className={`transition-transform ${
+                  rolesOpen ? "rotate-90" : ""
+                }`}
               />
             </button>
             {rolesOpen && (
@@ -223,7 +229,9 @@ const Sidebar = () => {
                 <span>Users</span>
               </span>
               <FiChevronRight
-                className={`transition-transform ${usersOpen ? "rotate-90" : ""}`}
+                className={`transition-transform ${
+                  usersOpen ? "rotate-90" : ""
+                }`}
               />
             </button>
             {usersOpen && (

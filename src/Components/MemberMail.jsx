@@ -1,28 +1,29 @@
-import { React, useState } from 'react'
-import { ChevronDown } from 'lucide-react';
-import CardHeader from './CardHeader';
+import { React, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import CardHeader from "./CardHeader";
 
 const MemberMail = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    role: 'Role',
+    firstName: "",
+    lastName: "",
+    email: "",
+    role: "Role",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Sending invitation for:', formData);
+    console.log("Sending invitation for:", formData);
     // In a real app, you would handle API submission here
   };
 
   // Placeholder URL for the custom illustration
-  const ILLUSTRATION_URL = 'https://placehold.co/180x150/FFFFFF/5B6CFF?text=Invite+Illustration';
+  const ILLUSTRATION_URL =
+    "https://placehold.co/180x150/FFFFFF/5B6CFF?text=Invite+Illustration";
 
   return (
     <div className="bg-white rounded-xl shadow-lg h-full overflow-hidden">
@@ -35,7 +36,11 @@ const MemberMail = () => {
             alt="Person sending mail illustration"
             className="w-full max-w-xs mx-auto object-contain"
             // Simple fallback if image loading fails
-            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/180x150/FFFFFF/8B5CF6?text=Invite+Illustration'; }}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://placehold.co/180x150/FFFFFF/8B5CF6?text=Invite+Illustration";
+            }}
           />
         </div>
 
@@ -78,9 +83,13 @@ const MemberMail = () => {
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className={`appearance-none w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition ${formData.role === 'Role' ? 'text-gray-400' : 'text-gray-700'}`}
+              className={`appearance-none w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition ${
+                formData.role === "Role" ? "text-gray-400" : "text-gray-700"
+              }`}
             >
-              <option disabled value="Role">Role</option>
+              <option disabled value="Role">
+                Role
+              </option>
               <option value="Admin">Admin</option>
               <option value="Editor">Editor</option>
               <option value="Viewer">Viewer</option>
