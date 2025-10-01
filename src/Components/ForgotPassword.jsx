@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-dvh grid place-items-center bg-gray-50 px-4">
+    <div className="min-h-dvh grid place-items-center bg-gray-50 px-4 ">
       <div className="w-full max-w-2xl bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="bg-purple-500 text-white py-5 px-6">
           <h2 className="text-xl font-semibold">Forget Password</h2>

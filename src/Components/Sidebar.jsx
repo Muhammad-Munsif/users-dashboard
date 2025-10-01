@@ -19,6 +19,8 @@ import {
   FiChevronRight,
   FiUserCheck,
   FiUserPlus,
+  FiSettings as FiSettingsOutline,
+  FiLock,
 } from "react-icons/fi";
 
 const Sidebar = () => {
@@ -26,10 +28,7 @@ const Sidebar = () => {
   const [usersOpen, setUsersOpen] = useState(true);
   const [adminsOpen, setAdminsOpen] = useState(false);
   const [pagesOpen, setPagesOpen] = useState(false);
-  const [showSignin, setShowSignin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
-  const [showForgot, setShowForgot] = useState(false);
-  const [showError, setShowError] = useState(false);
+  const [rolesOpen, setRolesOpen] = useState(false);
 
   return (
     <>
@@ -87,13 +86,7 @@ const Sidebar = () => {
                   <Link
                     to="/signin"
                     className="block p-2 rounded hover:bg-gray-100"
-                    onClick={() => {
-                      setOpen(false);
-                      setShowSignin(true);
-                      setShowSignup(false);
-                      setShowForgot(false);
-                      setShowError(false);
-                    }}
+                    onClick={() => setOpen(false)}
                   >
                     Sign In Form
                   </Link>
@@ -102,13 +95,7 @@ const Sidebar = () => {
                   <Link
                     to="/signup"
                     className="block p-2 rounded hover:bg-gray-100"
-                    onClick={() => {
-                      setOpen(false);
-                      setShowSignin(false);
-                      setShowSignup(true);
-                      setShowForgot(false);
-                      setShowError(false);
-                    }}
+                    onClick={() => setOpen(false)}
                   >
                     Sign Up Form
                   </Link>
@@ -117,13 +104,7 @@ const Sidebar = () => {
                   <Link
                     to="/forgot"
                     className="block p-2 rounded hover:bg-gray-100"
-                    onClick={() => {
-                      setOpen(false);
-                      setShowSignin(false);
-                      setShowSignup(false);
-                      setShowForgot(true);
-                      setShowError(false);
-                    }}
+                    onClick={() => setOpen(false)}
                   >
                     Forgot Password
                   </Link>
@@ -132,13 +113,7 @@ const Sidebar = () => {
                   <Link
                     to="/404"
                     className="block p-2 rounded hover:bg-gray-100"
-                    onClick={() => {
-                      setOpen(false);
-                      setShowSignin(false);
-                      setShowSignup(false);
-                      setShowForgot(false);
-                      setShowError(true);
-                    }}
+                    onClick={() => setOpen(false)}
                   >
                     Error 404
                   </Link>
@@ -191,12 +166,50 @@ const Sidebar = () => {
             )}
           </li>
 
-          <SideItem
-            to="/roles"
-            icon={<FiShield />}
-            label="Role & Permissions"
-            onClick={() => setOpen(false)}
-          />
+          {/* Role & Permission Section with sub-items */}
+          <li>
+            <button
+              className="w-full flex items-center justify-between p-2 rounded hover:bg-indigo-50 text-left"
+              onClick={() => setRolesOpen(!rolesOpen)}
+            >
+              <span className="inline-flex items-center gap-3">
+                <FiShield className="text-indigo-500" />
+                <span>Role & Permission</span>
+              </span>
+              <FiChevronRight
+                className={`transition-transform ${rolesOpen ? "rotate-90" : ""}`}
+              />
+            </button>
+            {rolesOpen && (
+              <ul className="pl-9 py-1 space-y-1">
+                <li>
+                  <Link
+                    to="/module-setting"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <FiSettingsOutline />
+                      Module Setting
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/roles"
+                    className="block p-2 rounded hover:bg-indigo-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <FiLock />
+                      Role & Permission
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
           <Section title="Navs" icon={<FiGrid />} />
 
           {/* Users Section */}

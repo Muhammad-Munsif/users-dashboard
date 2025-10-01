@@ -12,6 +12,7 @@ import SignupForm from "./Components/SignupForm";
 import ForgotPassword from "./Components/ForgotPassword";
 import RolesPermissions from "./pages/RolesPermissions";
 import Error404 from "./Components/Error404";
+import ModuleSetting from "./Components/ModuleSetting";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/forgot" element={<ForgotPassword />} />
             {/* Other */}
             <Route path="/roles" element={<RolesPermissions />} />
+            <Route path="/module-setting" element={<ModuleSetting />} />
             {/* 404 */}
             <Route path="*" element={<Error404 />} />
           </Routes>

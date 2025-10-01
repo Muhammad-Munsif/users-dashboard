@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
-import ModuleSetting from '../Components/ModuleSetting'
+// import ModuleSetting from '../Components/ModuleSetting'
 import Table from '../Components/Table'
 import Chart from 'react-apexcharts'
 
@@ -127,7 +127,7 @@ const Home = () => {
           <ChartJS/>
         </div>
       </div>
-      <ModuleSetting/>
+      {/* <ModuleSetting/> */}
     </div>
     </>
   )
