@@ -1,39 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 
 const StokeDetails = () => {
-  const users = [
+  // Define the master list of all users (renamed to allUsers for clarity)
+  const allUsers = [
     { name: "Jhon Smith", role: "Customer" },
     { name: "Jhon Smith", role: "Admin" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
+    { name: "Michael Johnson", role: "Customer" },
+    { name: "Sara Connor", role: "Customer" },
+    { name: "Alex Vandal", role: "Manager" },
+    { name: "Emily White", role: "Customer" },
     { name: "Jhon Smith", role: "Admin" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Admin" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    { name: "Jhon Smith", role: "Customer" },
-    // Adding more users to ensure the scrollbar is visible
+    { name: "Jane Foster", role: "Customer" },
+    { name: "Bruce Wayne", role: "Customer" },
+    { name: "Clark Kent", role: "Customer" },
+    { name: "Diana Prince", role: "Customer" },
+    { name: "Peter Parker", role: "Admin" },
+    { name: "Tony Stark", role: "Customer" },
+    { name: "Steve Rogers", role: "Customer" },
+    { name: "Thor Odinson", role: "Customer" },
+    // Additional users for scroll visibility and better search testing
     { name: "Jane Doe", role: "Customer" },
     { name: "Peter Pan", role: "Admin" },
     { name: "Mary Jane", role: "Customer" },
-    { name: "Mike Ross", role: "Customer" },
-    { name: "Harvey Specter", role: "Customer" },
-    { name: "Rachel Zane", role: "Customer" },
+    { name: "Mike Ross", role: "Lawyer" },
+    { name: "Harvey Specter", role: "Lawyer" },
+    { name: "Rachel Zane", role: "Paralegal" },
     { name: "Donna Paulsen", role: "Admin" },
   ];
 
+  // State to hold the current value of the search input
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Function to handle changes in the search input
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // Filter the users based on the search term
+  const filteredUsers = allUsers.filter((user) => {
+    const lowerCaseSearch = searchTerm.toLowerCase();
+
+    // Check if the search term is included in the user's name or role (case-insensitive)
+    return (
+      user.name.toLowerCase().includes(lowerCaseSearch) ||
+      user.role.toLowerCase().includes(lowerCaseSearch)
+    );
+  });
+
+  // User Card Component function
   const userCard = (user, index) => (
     <div
       key={index}
-      className="flex items-center justify-between p-2 my-2 bg-gray-100 rounded-full dark:bg-gray-800 "
+      // Card Styling: standard rounded corners
+      className="flex items-center justify-between p-3 my-2 bg-gray-100 rounded-xl shadow-sm dark:bg-gray-800"
     >
       <div className="flex items-center">
-        <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 mr-2">
+        <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 mr-3">
           {/* Placeholder for the user image */}
         </div>
         <div>
@@ -46,7 +68,7 @@ const StokeDetails = () => {
         </div>
       </div>
       <div className="flex space-x-2">
-        <button className="p-1 rounded-full text-gray-500 hover:text-gray-700">
+        <button className="p-1 rounded-full text-gray-500 hover:text-purple-600 hover:bg-gray-200 transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-4 h-4"
@@ -62,7 +84,7 @@ const StokeDetails = () => {
             />
           </svg>
         </button>
-        <button className="p-1 rounded-full text-gray-500 hover:text-gray-700">
+        <button className="p-1 rounded-full text-gray-500 hover:text-red-600 hover:bg-gray-200 transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-4 h-4"
@@ -83,7 +105,8 @@ const StokeDetails = () => {
   );
 
   return (
-    <div className="p-4 bg-white rounded-lg dark:bg-gray-900 overflow-hidden border-4 border-rose-600">
+    // UPDATED: Added max-w-4xl to limit width and mx-auto to center it
+    <div className="p-4 bg-white rounded-lg shadow-lg dark:bg-gray-900 overflow-hidden max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-0">
           Stoke Details
@@ -91,7 +114,11 @@ const StokeDetails = () => {
         <div className="relative w-full md:w-auto flex items-center">
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search by ID, Name, or Role"
+            // Bind the input value to the searchTerm state
+            value={searchTerm}
+            // Update the state on every change
+            onChange={handleSearchChange}
             className="w-full pl-4 pr-10 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
           />
           <button className="absolute right-0 top-0 h-full w-10 flex items-center justify-center bg-purple-600 text-white rounded-r-full hover:bg-purple-700">
@@ -112,8 +139,19 @@ const StokeDetails = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-[400px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-200">
-        {users.map((user, index) => userCard(user, index))}
+
+      {/* Container for the User Cards (now using filteredUsers) */}
+      {/* UPDATED: Reduced fixed height from h-[400px] to h-[300px] */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-[300px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-200">
+        {/* Render a message if no results are found */}
+        {filteredUsers.length === 0 && (
+          <div className="md:col-span-2 lg:col-span-3 text-center py-8 text-gray-500">
+            No users found matching "{searchTerm}".
+          </div>
+        )}
+
+        {/* Map over the filtered list */}
+        {filteredUsers.map((user, index) => userCard(user, index))}
       </div>
     </div>
   );

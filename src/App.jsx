@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/roles" element={<RolesPermissions />} />
             <Route path="/module-setting" element={<ModuleSetting />} />
             {/* 404 */}
-            <Route path="*" element={<Error404 />} />
+            <Route path="/*" element={<Error404 />} />
           </Routes>
         </main>
       </div>
