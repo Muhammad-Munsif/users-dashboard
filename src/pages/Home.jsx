@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
+import ModuleSetting from '../Components/ModuleSetting'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Tooltip, Legend)
 
@@ -121,6 +122,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ModuleSetting/>
     </div>
   )
 }
