@@ -1,5 +1,4 @@
 import React from "react";
-
 const RecentActivity = () => {
   // Mock data matching the structure shown in the image
   const activityData = [
@@ -27,7 +26,7 @@ const RecentActivity = () => {
 
   return (
     <div className="max-w-md mx-auto bg-white p-5 rounded-xl shadow-lg h-full">
-      {/* Card Header */}
+      {/* <Card Header />>*/}
       <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
         <h2 className="text-xl font-bold text-gray-800">Recent activity</h2>
         {/* Three-dot menu icon (using inline SVG for simplicity) */}
