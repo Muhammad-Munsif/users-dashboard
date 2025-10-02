@@ -64,7 +64,7 @@ const Navbar = () => {
             </button>
 
             {/* 2. Search Bar Group */}
-            <div className="flex-1 max-w-lg flex items-center shadow-lg rounded-xl **hidden sm:flex**">
+            <div className="flex-1 max-w-lg items-center shadow-lg rounded-xl hidden md:flex">
               {/* Search Input */}
               <input
                 type="text"
@@ -75,15 +75,17 @@ const Navbar = () => {
                 style={{ paddingRight: "0" }}
               />
               {/* Search Button (Orange) */}
+              <div className="sm:hidden">
               <button
                 onClick={handleSearch}
-                className=" md:d-none flex items-center justify-center p-3 h-[50px] w-[50px] text-white bg-orange-600 hover:bg-orange-700 rounded-r-xl transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                className="flex items-center justify-center p-3 h-[50px] w-[50px] text-white bg-orange-600 hover:bg-orange-700 rounded-r-xl transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                 aria-label="Perform Search"
                 style={{ minWidth: "50px" }} // Ensure button doesn't shrink
               >
                 {/* Using Search from lucide-react */}
                 <Search className="w-5 h-5" />
               </button>
+              </div>
             </div>
 
             {/* 3. Right Icons and Avatar Group */}
