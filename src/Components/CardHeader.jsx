@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { MoreHorizontal } from "lucide-react";
-import CardMenu from './CardMenu'; // <--- Import the new menu component
+import CardMenu from "./CardMenu"; // <--- Import the new menu component
 
 const CardHeader = ({ title }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,9 +10,9 @@ const CardHeader = ({ title }) => {
 
   const toggleMenu = (e) => {
     e.stopPropagation(); // Stop click from propagating to the document listener immediately
-    setIsMenuOpen(prev => !prev);
+    setIsMenuOpen((prev) => !prev);
   };
-  
+
   const closeMenu = () => setIsMenuOpen(false);
 
   // Effect to close the menu when clicking outside
@@ -33,10 +33,10 @@ const CardHeader = ({ title }) => {
   return (
     <div className="flex justify-between items-center p-5 border-b border-gray-100">
       <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
-      
+
       {/* Container for the menu: position-relative is key! */}
-      <div className="relative" ref={menuRef}> 
-        <button 
+      <div className="relative" ref={menuRef}>
+        <button
           onClick={toggleMenu}
           className="text-gray-400 hover:text-indigo-500 p-1 rounded-full transition duration-150"
           aria-expanded={isMenuOpen}
@@ -44,10 +44,10 @@ const CardHeader = ({ title }) => {
         >
           <MoreHorizontal size={24} />
         </button>
-        
+
         {/* Conditional Rendering of the Menu */}
         {isMenuOpen && (
-          <CardMenu 
+          <CardMenu
             onClose={closeMenu}
             onActionClick={closeMenu} // Close the menu when any action is clicked
           />
