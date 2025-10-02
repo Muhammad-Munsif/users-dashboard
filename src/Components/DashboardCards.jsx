@@ -1,8 +1,8 @@
 // src/components/DashboardCards.jsx
-import React from 'react';
-import StatCard from './StatCard';
-import PromoCard from './PromoCard';
-import { User, Globe, BarChart2, PieChart } from 'lucide-react'; // Example icons
+import React from "react";
+import StatCard from "./StatCard";
+import PromoCard from "./PromoCard";
+import { User, Globe, BarChart2, PieChart } from "lucide-react"; // Example icons
 
 const DashboardCards = () => {
   return (
@@ -46,7 +46,9 @@ const DashboardCards = () => {
       {/* Grid for the promo card (spans all columns on mobile, adjusts on tablet/desktop) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Promo Card */}
-        <div className="lg:col-span-2"> {/* This makes it span 2 columns on large screens */}
+        <div className="lg:col-span-2">
+          {" "}
+          {/* This makes it span 2 columns on large screens */}
           <PromoCard />
         </div>
       </div>
