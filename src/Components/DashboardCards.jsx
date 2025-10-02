@@ -6,9 +6,9 @@ import { User, Globe, BarChart2, PieChart } from 'lucide-react'; // Example icon
 
 const DashboardCards = () => {
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
+    <div className="p-2 sm:p-6 lg:p-0">
       {/* Grid for the top cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 mb-2">
         {/* Stat Card 1 */}
         <StatCard
           icon={User}

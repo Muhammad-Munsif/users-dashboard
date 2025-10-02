@@ -29,7 +29,7 @@ const data = [
 
 const StockDetailsChart = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto">
+    <div className="bg-white h-full p-6 rounded-lg shadow-md max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold text-gray-800">Stoke Details</h2>
         <div className="relative">

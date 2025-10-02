@@ -16,6 +16,7 @@ import RecentActivity from "../Components/RecentActivity";
 import MemberMail from "../Components/MemberMail";
 import StokeDetails from "../Components/StokeDetails";
 import StockDetailsChart from "../Components/StockDetailsChart";
+import DashboardCards from "../Components/DashboardCards";
 
 ChartJS.register(
   CategoryScale,
@@ -66,7 +67,7 @@ const Home = () => {
             </div> */}
             <StockDetailsChart />
           </div>
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <div className="bg-white rounded-xl shadow-sm p-4">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="font-medium">Revenue</h3>
@@ -85,7 +86,8 @@ const Home = () => {
               <p className="text-sm opacity-90">Upgrade to Pro</p>
               <p className="text-lg font-semibold">Unlock advanced analytics</p>
             </div>
-          </div>
+          </div> */}
+          <DashboardCards />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

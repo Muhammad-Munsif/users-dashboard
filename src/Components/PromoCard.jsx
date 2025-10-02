@@ -20,7 +20,7 @@ const PromoCard = () => {
         </div>
 
         {/* Title and Description */}
-        <h3 className="text-3xl font-bold mb-3 leading-tight">
+        <h3 className="text-3xl font-bold mb-2   leading-tight">
           Create CRM Reports
         </h3>
         <p className="text-gray-200 text-lg mb-6 flex-grow">

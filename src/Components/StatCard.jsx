@@ -12,21 +12,21 @@ const StatCard = ({ icon: Icon, value, label, description, color }) => {
   }[color] || 'bg-gray-100 text-gray-500'; // Default if color not matched
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg flex flex-col justify-between h-full">
+    <div className="bg-white p-3 rounded-2xl shadow-lg flex flex-col justify-between h-full">
       {/* Top section: Icon and More options */}
-      <div className="flex justify-between items-start mb-4">
+      <div className="flex items-start">
         {/* Icon */}
-        <div className={`p-3 rounded-xl ${iconBgColor}`}>
+        <div className={`p-3 rounded-xl flex justify-between w-full ${iconBgColor} `}>
           <Icon className="w-6 h-6" />
-        </div>
         {/* More options button */}
         <button className="text-gray-400 hover:text-gray-600">
           <MoreHorizontal className="w-5 h-5" />
         </button>
+        </div>
       </div>
 
       {/* Main Value */}
-      <p className="text-4xl font-bold text-gray-900 mb-1 leading-tight">
+      <p className="text-2xl font-bold text-gray-900 mb-1 leading-tight">
         {value}
       </p>
 
