@@ -2,19 +2,28 @@
 
 import React from "react";
 // Importing the specific icons shown in your menu image
-import { Eye, Trash2, Edit, Printer, Download } from "lucide-react"; 
+import { Eye, Trash2, Edit, Printer, Download } from "lucide-react";
 
 const menuItems = [
   { icon: Eye, label: "Action", action: () => console.log("Action clicked") },
-  { icon: Trash2, label: "Delete", action: () => console.log("Delete clicked"), color: "text-red-500" },
+  {
+    icon: Trash2,
+    label: "Delete",
+    action: () => console.log("Delete clicked"),
+    color: "text-red-500",
+  },
   { icon: Edit, label: "Edit", action: () => console.log("Edit clicked") },
   { icon: Printer, label: "Print", action: () => console.log("Print clicked") },
-  { icon: Download, label: "Download", action: () => console.log("Download clicked") },
+  {
+    icon: Download,
+    label: "Download",
+    action: () => console.log("Download clicked"),
+  },
 ];
 
 const CardMenu = ({ onActionClick, onClose }) => {
   // Simple component for a single menu item
-  const MenuItem = ({ icon: Icon, label, action, color = 'text-gray-700' }) => (
+  const MenuItem = ({ icon: Icon, label, action, color = "text-gray-700" }) => (
     <button
       onClick={() => {
         action();
