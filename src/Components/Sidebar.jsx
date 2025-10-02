@@ -40,7 +40,7 @@ const Sidebar = () => {
       )}
       {/* Toggle Button (Mobile Only) */}
       <button
-        className="md:hidden p-3 fixed top-4 left-4 bg-indigo-600 text-white rounded-lg z-50"
+        className="md:hidden md:m-4 p-3 fixed top-4 left-4 bg-indigo-600 text-white rounded-lg z-50"
         onClick={() => setOpen(!open)}
       >
         {open ? <FiX size={20} /> : <FiMenu size={20} />}
@@ -277,25 +277,6 @@ const Sidebar = () => {
           <Section title="Components" icon={<FiLayers />} />
           <Section title="Table" icon={<FiTable />} />
           <Section title="Cards" icon={<FiSquare />} />
-
-          {/* <SideItem
-            to="/signin"
-            icon={<FiSquare />}
-            label="Sign In"
-            onClick={() => setOpen(false)}
-          />
-          <SideItem
-            to="/signup"
-            icon={<FiSquare />}
-            label="Sign Up"
-            onClick={() => setOpen(false)}
-          />
-          <SideItem
-            to="/forgot"
-            icon={<FiSquare />}
-            label="Forgot Password"
-            onClick={() => setOpen(false)}
-          /> */}
         </ul>
       </div>
     </>

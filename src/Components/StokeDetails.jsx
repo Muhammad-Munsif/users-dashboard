@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Person from "../assets/person1.webp";
 const StokeDetails = () => {
   // Define the master list of all users (renamed to allUsers for clarity)
   const allUsers = [
@@ -55,8 +55,8 @@ const StokeDetails = () => {
       className="flex items-center justify-between p-3 my-2 bg-gray-100 rounded-xl shadow-sm dark:bg-gray-800"
     >
       <div className="flex items-center">
-        <div className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 mr-3">
-          {/* Placeholder for the user image */}
+        <div className="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-600 mr-3">
+          <img className="rounded-full" src={Person} alt="img is not found" />
         </div>
         <div>
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -68,7 +68,7 @@ const StokeDetails = () => {
         </div>
       </div>
       <div className="flex space-x-2">
-        <button className="p-1 rounded-full text-gray-500 hover:text-purple-600 hover:bg-gray-200 transition">
+        <button className="p-1 rounded-5 text-gray-500 hover:bg-purple-800 hover:text-white transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-4 h-4"
@@ -84,7 +84,7 @@ const StokeDetails = () => {
             />
           </svg>
         </button>
-        <button className="p-1 rounded-full text-gray-500 hover:text-red-600 hover:bg-gray-200 transition">
+        <button className="p-1 rounded-3 text-gray-500 hover:text-white hover:bg-purple-800 transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-4 h-4"

@@ -17,7 +17,7 @@ import MemberMail from "../Components/MemberMail";
 import StokeDetails from "../Components/StokeDetails";
 import StockDetailsChart from "../Components/StockDetailsChart";
 import DashboardCards from "../Components/DashboardCards";
-
+import Person from "../assets/person1.webp";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -97,7 +97,9 @@ const Home = () => {
               {Array.from({ length: 5 }).map((_, i) => (
                 <li key={i} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="size-8 rounded-full bg-indigo-100" />
+                    <div>
+                      <img src={Person} alt="" className="w-10 h-10 rounded-full" />
+                    </div>
                     <div>
                       <p className="text-sm font-medium">User {i + 1}</p>
                       <p className="text-xs text-gray-500">

@@ -77,7 +77,7 @@ const Navbar = () => {
               {/* Search Button (Orange) */}
               <button
                 onClick={handleSearch}
-                className="flex items-center justify-center p-3 h-[50px] w-[50px] text-white bg-orange-600 hover:bg-orange-700 rounded-r-xl transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                className=" md:d-none flex items-center justify-center p-3 h-[50px] w-[50px] text-white bg-orange-600 hover:bg-orange-700 rounded-r-xl transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                 aria-label="Perform Search"
                 style={{ minWidth: "50px" }} // Ensure button doesn't shrink
               >

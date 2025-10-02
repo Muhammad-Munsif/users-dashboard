@@ -18,11 +18,11 @@ const App = () => {
   return (
     <Router>
       <Sidebar />
-      <div className="md:ml-64 min-h-dvh bg-gray-50">
+      <div className="md:ml-64 min-h-dvh bg-gray-50 overflow-x-hidden">
         <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<Home />} />
             {/* User routes */}
             <Route path="/users" element={<UserList />} />
             <Route path="/users/new" element={<AddNewUser />} />
@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/roles" element={<RolesPermissions />} />
             <Route path="/module-setting" element={<ModuleSetting />} />
             {/* 404 */}
-            <Route path="/*" element={<Error404 />} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </main>
       </div>
