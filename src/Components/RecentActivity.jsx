@@ -1,4 +1,5 @@
 import React from "react";
+import CardHeader from "./CardHeader";
 const RecentActivity = () => {
   // Mock data matching the structure shown in the image
   const activityData = [
@@ -25,38 +26,15 @@ const RecentActivity = () => {
   ];
 
   return (
-    <div className="max-w-md mx-auto bg-white p-5 rounded-xl shadow-lg h-full">
-      {/* <Card Header />>*/}
-      <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
-        <h2 className="text-xl font-bold text-gray-800">Recent activity</h2>
-        {/* Three-dot menu icon (using inline SVG for simplicity) */}
-        <button className="p-2 rounded-lg text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-ellipsis"
-          >
-            <circle cx="12" cy="12" r="1" />
-            <circle cx="19" cy="12" r="1" />
-            <circle cx="5" cy="12" r="1" />
-          </svg>
-        </button>
-      </div>
-
+    <div className="max-w-md mx-auto bg-white  rounded-xl shadow-lg h-full">
+      <CardHeader title="Recent Activity" />
       {/* Activity Feed Container */}
-      <div className="space-y-6">
+      <div className="space-y-6 p-5">
         {activityData.map((activity, index) => (
           <div key={index} className="flex items-start">
             {/* Timeline Dot (Purple) */}
             <div className="flex-shrink-0 mt-1 mr-3">
-              <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+              <div className="w-2 h-2 mt-1 rounded-full bg-indigo-500"></div>
             </div>
 
             {/* Content */}
@@ -67,7 +45,7 @@ const RecentActivity = () => {
               </p>
 
               {/* Activity Description (Lighter, multi-line text) */}
-              <p className="letter-space text-md text-gray-500 leading-snug whitespace-pre-wrap">
+              <p className="letter-space p-3 text-md text-gray-500 leading-snug whitespace-pre-wrap">
                 {activity.content}
               </p>
             </div>
