@@ -1,6 +1,6 @@
 // src/components/PromoCard.jsx
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const PromoCard = () => {
   return (
@@ -9,7 +9,7 @@ const PromoCard = () => {
       {/* Abstract Background Elements (optional, for visual flair) */}
       <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-purple-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl"></div>
       <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl"></div>
-      
+
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-between h-full">
         {/* Dollar Icon (or similar) */}
@@ -28,8 +28,8 @@ const PromoCard = () => {
         </p>
 
         {/* Read More Link */}
-        <a 
-          href="#" 
+        <a
+          href="#"
           className="flex items-center text-white font-semibold hover:text-indigo-200 transition-colors duration-200"
         >
           Read More
