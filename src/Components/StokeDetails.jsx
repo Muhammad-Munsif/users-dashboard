@@ -114,7 +114,7 @@ const StokeDetails = () => {
         <div className="relative w-full md:w-auto flex items-center">
           <input
             type="text"
-            placeholder="Search by ID, Name, or Role"
+            placeholder="Search..."
             // Bind the input value to the searchTerm state
             value={searchTerm}
             // Update the state on every change

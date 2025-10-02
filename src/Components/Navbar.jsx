@@ -12,7 +12,7 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
-
+import Person from "../assets/person1.webp";
 // Custom component for a standard notification icon with a badge
 const NotificationIcon = ({ IconComponent, count, color }) => (
   // The icon is passed as IconComponent
@@ -42,7 +42,6 @@ const Navbar = () => {
 
   // Mock user data for the avatar
   const user = {
-    avatarUrl: "https://placehold.co/50x50/374151/FFFFFF?text=JP", // Placeholder image
     name: "John Profile",
   };
 
@@ -65,7 +64,7 @@ const Navbar = () => {
             </button>
 
             {/* 2. Search Bar Group */}
-            <div className="flex-1 max-w-lg flex items-center shadow-lg rounded-xl">
+            <div className="flex-1 max-w-lg flex items-center shadow-lg rounded-xl **hidden sm:flex**">
               {/* Search Input */}
               <input
                 type="text"
@@ -111,7 +110,7 @@ const Navbar = () => {
                 >
                   <img
                     className="h-10 w-10 rounded-full object-cover ring-2 ring-cyan-500 ring-offset-2 ring-offset-white"
-                    src={user.avatarUrl}
+                    src={Person}
                     alt={user.name}
                     // Fallback for image loading errors
                     onError={(e) => {

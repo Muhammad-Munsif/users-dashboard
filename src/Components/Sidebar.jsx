@@ -22,7 +22,7 @@ import {
   FiSettings as FiSettingsOutline,
   FiLock,
 } from "react-icons/fi";
-
+import Logo from "../assets/logo.jpg";
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const [usersOpen, setUsersOpen] = useState(true);
@@ -49,10 +49,16 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 transform transition-transform duration-300 z-40 
-        ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 overflow-y-auto scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-pink-100`}
+        ${
+          open ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0 overflow-y-auto scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-pink-100`}
       >
         <div className="flex items-center gap-3 mb-6">
-          <div className="size-8 rounded-lg bg-indigo-600" />
+          <img
+            className="w-12 h-12 bg-transparent opacity-75 rounded-full border-2 border-rose-600"
+            src={Logo}
+            alt="image is not found"
+          />
           <h2 className="text-xl font-semibold">Mege Users</h2>
         </div>
 
