@@ -231,28 +231,28 @@ const Table = () => {
                 title="Sales"
                 value="$2,034"
                 color="text-indigo-600"
-                iconBg="bg-indigo-100"
+                iconBg="bg-indigo-500"
               />
               <DetailCard
                 icon={BookOpen}
                 title="Commision"
                 value="$706"
                 color="text-pink-600"
-                iconBg="bg-pink-100"
+                iconBg="bg-pink-500"
               />
               <DetailCard
                 icon={Package}
                 title="Average Bid"
                 value="$49"
                 color="text-teal-600"
-                iconBg="bg-teal-100"
+                iconBg="bg-teal-500"
               />
               <DetailCard
                 icon={CheckSquare}
                 title="All Time Sales"
                 value="$5.8M"
                 color="text-green-600"
-                iconBg="bg-green-100"
+                iconBg="bg-green-500"
               />
             </div>
 
