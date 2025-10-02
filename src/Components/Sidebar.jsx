@@ -278,7 +278,7 @@ const Sidebar = () => {
           <Section title="Table" icon={<FiTable />} />
           <Section title="Cards" icon={<FiSquare />} />
 
-          <SideItem
+          {/* <SideItem
             to="/signin"
             icon={<FiSquare />}
             label="Sign In"
@@ -295,7 +295,7 @@ const Sidebar = () => {
             icon={<FiSquare />}
             label="Forgot Password"
             onClick={() => setOpen(false)}
-          />
+          /> */}
         </ul>
       </div>
     </>

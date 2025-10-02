@@ -68,7 +68,7 @@ const RecentActivity = () => {
               </p>
 
               {/* Activity Description (Lighter, multi-line text) */}
-              <p className="text-sm text-gray-500 leading-snug whitespace-pre-wrap">
+              <p className="letter-space text-md text-gray-500 leading-snug whitespace-pre-wrap">
                 {activity.content}
               </p>
             </div>
