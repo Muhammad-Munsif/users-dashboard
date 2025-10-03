@@ -2,12 +2,13 @@ import React, { useState } from "react";
 // Restoring all icons to lucide-react to ensure compilation success
 import {
   Menu,
-  Search,
   Bell,
   MessageCircle,
   User,
   Settings,
   LogOut,
+  DollarSign,
+  Search,
   Edit,
   Trash2,
   TrendingUp,
@@ -16,19 +17,18 @@ import {
   ChevronDown,
   ShoppingBag,
   BookOpen,
-  DollarSign,
   Package,
   CheckSquare,
   MoreHorizontal,
 } from "lucide-react";
-
+import Person from '../assets/person1.webp'
 // --- Component: User Card (Used in New Users Panel) ---
 const UserCard = ({ name, role }) => {
   const avatarText = name
     .split(" ")
     .map((n) => n[0])
     .join("");
-  const avatarUrl = `https://placehold.co/50x50/${
+  const avatarUrl = {Person} || `https://placehold.co/50x50/${
     role === "Admin" ? "7C3AED" : "EC4899"
   }/FFFFFF?text=${avatarText}`;
 
@@ -36,8 +36,8 @@ const UserCard = ({ name, role }) => {
     <div className="flex items-center justify-between p-3 mb-2 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition duration-200 ease-in-out">
       <div className="flex items-center space-x-3">
         <img
-          className="h-9 w-9 rounded-full object-cover"
-          src={avatarUrl}
+          className="w-10 h-10 rounded-full object-cover"
+          src={Person}
           alt={name}
         />
         <div>
@@ -53,11 +53,11 @@ const UserCard = ({ name, role }) => {
           </p>
         </div>
       </div>
-      <div className="flex space-x-2 text-gray-400">
-        <button className="p-1 hover:text-indigo-500 transition">
+      <div className="flex space-x-2 text-gray-400 transition-all duration-300">
+        <button className="p-1 hover:bg-purple-800 hover:text-white ">
           <Edit className="w-4 h-4" />
         </button>
-        <button className="p-1 hover:text-red-500 transition">
+        <button className="p-1 hover:text-white hover:bg-purple-800 ">
           <Trash2 className="w-4 h-4" />
         </button>
       </div>
@@ -118,7 +118,7 @@ const Table = () => {
                 className="text-xs w-full py-1 px-3 rounded-l-full focus:outline-none"
               />
               <button className="bg-orange-600 text-white p-2 rounded-r-full hover:bg-orange-700">
-                <Search className="w-3 h-3" />
+                <Search className="w-5 h-3" />
               </button>
             </div>
 
