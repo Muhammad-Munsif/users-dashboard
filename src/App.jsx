@@ -20,11 +20,28 @@ import Error404 from "./Components/Error404";
 import ModuleSetting from "./Components/ModuleSetting";
 
 const App = () => {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  // The function to TOGGLE the state
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
+
   return (
     <Router>
-      <Sidebar />
-      <div className="md:ml-64 min-h-dvh bg-gray-50 overflow-x-hidden">
-        <Navbar />
+       {/* 1. Sidebar receives the state */}
+      <Sidebar isSidebarOpen={isSidebarOpen} />
+
+      {/* 2. Main Content Wrapper: Applies the shifting margin */}
+      <div 
+        className={`flex-1 flex flex-col transition-all duration-300 ease-in-out 
+          ${isSidebarOpen ? 'md:ml-64' : 'md:ml-0'} ` // <-- Key logic for shifting
+        }
+      >
+        {/* 3. Navbar receives the toggler function */}
+        <Navbar toggleSidebar={toggleSidebar} />
+
         <main>
           <Routes>
             {/* Default route - redirects to home/dashboard */}
