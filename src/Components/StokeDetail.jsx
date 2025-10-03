@@ -1,20 +1,8 @@
 import React, { useState } from "react";
 import { MoreHorizontal, Plus } from "lucide-react";
 import CardHeader from "./CardHeader";
+import ProductImage from "./ProductImage";
 
-const ProductImage = ({ icon, color }) => (
-  <div
-    className={`relative w-12 h-12 rounded-full ${color} flex items-center justify-center shadow-md`}
-  >
-    {/* Placeholder for product image - using generic colors and a small indicator */}
-    <span className="text-white text-xs font-bold opacity-80">
-      {icon.charAt(0)}
-    </span>
-    {/* <div className="absolute -bottom-0 -right-0.5 bg-pink-500 p-0.5 rounded-full border-2 border-white">
-      <Plus size={10} className="text-white" />
-    </div> */}
-  </div>
-);
 
 const StokeDetail = () => {
   const stockData = [
@@ -24,6 +12,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-gray-900",
       icon: "Watch",
+      person: "../assets/person1.webp"
     },
     {
       id: 2,
@@ -31,6 +20,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-gray-300",
       icon: "Shoe",
+      person: "../assets/person1.webp"
     },
     {
       id: 3,
@@ -38,6 +28,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-gray-500",
       icon: "Key",
+      person: "../assets/person1.webp"
     },
     {
       id: 4,
@@ -45,6 +36,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-red-500",
       icon: "Car",
+      person: "../assets/person1.webp"
     },
     {
       id: 5,
@@ -52,6 +44,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-gray-900",
       icon: "Shirt",
+      person: "../assets/person1.webp"
     },
     {
       id: 6,
@@ -59,6 +52,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-gray-700",
       icon: "Pants",
+      person: "../assets/person1.webp"
     },
     {
       id: 7,
@@ -66,6 +60,7 @@ const StokeDetail = () => {
       price: "$564",
       imageColor: "bg-gray-400",
       icon: "Shoe",
+      person: "../assets/person1.webp"
     },
   ];
 
@@ -84,7 +79,7 @@ const StokeDetail = () => {
               className="flex justify-between items-center hover:bg-indigo-50 p-2 rounded-lg transition duration-200"
             >
               <div className="flex items-center space-x-3">
-                <ProductImage icon={item.icon} color={item.imageColor} />
+                <ProductImage icon={item.icon} color={item.imageColor}  person={item.person}/>
                 <span className="font-medium text-gray-700">{item.name}</span>
               </div>
               <span className="text-gray-500 font-medium">{item.price}</span>
