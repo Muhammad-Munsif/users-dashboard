@@ -175,7 +175,7 @@ const EditUserModal = ({ user, onClose, onSave }) => {
 // Delete User Modal
 const DeleteUserModal = ({ user, onClose, onDelete }) => (
   <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50 p-4">
-    <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-2xl text-center">
+    <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow-2xl text-center flex flex-col gap-3">
       <TrashIcon className="size-8 text-red-500 mx-auto mb-4" />
       <h2 className="text-xl font-semibold mb-4 text-gray-800">
         Confirm Deletion
