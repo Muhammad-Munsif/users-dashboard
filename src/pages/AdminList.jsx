@@ -180,9 +180,9 @@ const DeleteUserModal = ({ user, onClose, onDelete }) => (
       <h2 className="text-xl font-semibold mb-4 text-gray-800">
         Confirm Deletion
       </h2>
-      <p className="text-gray-600">
+      <p className="text-gray-600 text-wrap">
         Are you sure you want to delete user{" "}
-        <span className="font-bold text-purple-600">{user.user}</span>? This
+        <span className="font-bold text-purple-600 text-wrap">{user.user}</span>? This
         action cannot be undone.
       </p>
       <div className="flex justify-center gap-3 mt-6">

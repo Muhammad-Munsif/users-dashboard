@@ -22,8 +22,8 @@ const AddNewAdmin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const existing = JSON.parse(localStorage.getItem("users") || "[]");
-    const newUser = {
+    const existing = JSON.parse(localStorage.getItem("admins") || "[]");
+    const newAdmin = {
       id: existing.length + 1,
       user: form.firstName || form.username,
       username: form.username,
@@ -31,8 +31,8 @@ const AddNewAdmin = () => {
       role: form.role,
       status: "Active",
     };
-    localStorage.setItem("users", JSON.stringify([...existing, newUser]));
-    navigate("/users");
+    localStorage.setItem("admins", JSON.stringify([...existing, newAdmin]));
+    navigate("/admins");
   };
 
   return (
