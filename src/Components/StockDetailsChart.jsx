@@ -93,8 +93,8 @@ const data = [
 const StockDetailsChart = () => {
   return (
     <div className="bg-white h-full p-6 rounded-lg shadow-md max-w-4xl mx-auto md:flex-col">
-      <div className="flex justify-between items-center md:flex-row mb-4">
-        <h2 className="text-2xl font-semibold text-gray-800">Stoke Details</h2>
+      <div className="flex justify-between items-center md:flex-row mb-4 ">
+        <h2 className="text-2xl font-semibold text-gray-800 text-wrap">Stoke Details</h2>
         <div className="relative">
           <select className="appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-8 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm">
             <option>Show By Month</option>

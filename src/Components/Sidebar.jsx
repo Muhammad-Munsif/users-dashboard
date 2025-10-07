@@ -42,7 +42,7 @@ const Sidebar = () => {
         />
       )}
       <button
-        className="md:hidden md:m-4 flex items-center justify-end p-3 m-2.5 fixed bg-indigo-600 left-6 top-6 text-white rounded-lg z-50"
+        className="md:hidden md:m-4 flex items-center justify-end p-3 m-2.5 fixed bg-indigo-600 left-6 top-2 text-white rounded-lg z-50"
         onClick={handleMenuClick}
       >
         {open ? <FiX size={20} /> : <FiMenu size={20} />}
