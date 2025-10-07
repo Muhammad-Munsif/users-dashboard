@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const PromoCard = () => {
   return (
     // Background gradient and padding
-    <div className="bg-gradient-to-br from-purple-600 to-indigo-700 p-8 rounded-2xl shadow-lg text-white h-full flex flex-col justify-between relative overflow-hidden">
+    <div className="bg-gradient-to-br from-purple-600 to-indigo-700 p-4 rounded-2xl shadow-lg text-white h-full flex flex-col justify-between relative overflow-hidden">
       {/* Abstract Background Elements (optional, for visual flair) */}
       <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-purple-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl"></div>
       <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl"></div>
@@ -23,7 +23,7 @@ const PromoCard = () => {
         <h3 className="text-3xl font-bold mb-2   leading-tight">
           Create CRM Reports
         </h3>
-        <p className="text-gray-200 text-lg mb-6 flex-grow">
+        <p className="text-gray-200 text-lg mb-3 flex-grow text-wrap">
           Outlines keep you and honest indulging honest.
         </p>
 

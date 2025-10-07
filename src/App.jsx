@@ -45,7 +45,7 @@ const App = () => {
         <main>
           <Routes>
             {/* Default route - redirects to home/dashboard */}
-            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/*" element={<Navigate to="/home" replace />} />
 
             {/* Home/Dashboard route */}
             <Route path="/home" element={<Home />} />
