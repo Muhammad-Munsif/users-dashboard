@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 body {
+  width: 100%;
+  height: auto;
   overflow-x: hidden;
-  white-space: nowrap;
+
 }

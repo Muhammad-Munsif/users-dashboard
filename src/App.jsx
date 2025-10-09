@@ -41,7 +41,6 @@ const App = () => {
       >
         {/* 3. Navbar receives the toggler function */}
         <Navbar toggleSidebar={toggleSidebar} />
-
         <main>
           <Routes>
             {/* Default route - redirects to home/dashboard */}
